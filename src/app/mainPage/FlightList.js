@@ -5,7 +5,7 @@ import compass from '../../images/compass.png';
 const FlightList = (props) => {
     return (
         <div className="container-fluid" className="flights-back">
-            <div class="container main-list">
+            <div className="container main-list">
                 <ul className="list-group list-group-item-action">
                     <li className="list-group-item list-group-item-action">
                         <div className="row">

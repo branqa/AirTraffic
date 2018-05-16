@@ -32,11 +32,16 @@ class Main extends Component {
 
         dataService.getFlights(this.state.latitude, this.state.longitude)
             .then(allFlights => {
+
+                localStorage.setItem('Allflights', JSON.stringify(allFlights))
                 this.setState({
                     flights: allFlights
                 });
             }
             )
+        this.interval = setInterval(() => {
+            dataService.getFlights(this.state.latitude, this.state.longitude)
+        }, 60000)
     }
 
     error = (error) => {
@@ -78,8 +83,9 @@ class Main extends Component {
                 </div>
             )
         } else {
+            const sortedFlights = (this.state.flights).sort((a, b) => b.altitude - a.altitude)
             return (
-                <FlightList flights={this.state.flights} />
+                <FlightList flights={sortedFlights} />
             )
         }
     }

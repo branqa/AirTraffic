@@ -7,7 +7,7 @@ class Flight {
         this.model = flight.Mdl;
         this.destination = flight.To;
         this.originAirport = flight.From;
-        this.logo = flight.Op || ''
+        this.logo = flight.Op || '';
 
     }
 }
