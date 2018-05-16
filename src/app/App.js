@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
+import { Route} from "react-router-dom";
+import Welcome from './welcomePage/Welcome';
+import Main from './mainPage/Main';
+import Error from './errorPage/Error'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-          <h1 className="App-title">AirTraffic</h1>
-      </div>
+      <React.Fragment>
+       <Route exact path='/' component={Welcome} />
+       <Route  path='/main' component={Main} />
+       <Route  path='/error' component={Error} />
+     </React.Fragment>
     );
   }
 }

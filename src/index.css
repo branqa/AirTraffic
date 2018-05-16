@@ -3,3 +3,32 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.welcome{
+  background:url('./images/airplane.jpg');
+   background-size: cover;
+   color:#ffffff;
+   height:120vh;
+   
+}
+
+.main-heading{
+  margin-top:100px;
+  font-weight: 700;
+}
+
+.btn-lg{
+  margin-right: 10px;
+}
+
+.error-page{
+  padding:0;
+  margin-top:100px;
+}
+
+.crash{
+  display: block;
+  width:200px;
+  margin:0 auto;
+  padding-bottom:40px;
+}
