@@ -15,7 +15,8 @@ class Main extends Component {
             permDenied: false,
             posUnavailable: false,
             timeout: false,
-            flights: []
+            flights: [],
+            errorMsg:''
         }
     }
 
@@ -32,11 +33,16 @@ class Main extends Component {
 
         dataService.getFlights(this.state.latitude, this.state.longitude)
             .then(allFlights => {
-
-                localStorage.setItem('Allflights', JSON.stringify(allFlights))
-                this.setState({
-                    flights: allFlights
-                });
+                if (allFlights.error) {
+                    this.setState({
+                        errorMsg: allFlights.error
+                    })
+                } else {
+                    localStorage.setItem('Allflights', JSON.stringify(allFlights))
+                    this.setState({
+                        flights: allFlights
+                    })
+                }
             }
             )
         this.interval = setInterval(() => {
@@ -69,7 +75,7 @@ class Main extends Component {
         } else if (this.state.posUnavailable) {
             return (
                 <div className="container-fluid error-page">
-                    <div className="jumbotron">
+                    <div className="jumbotron error-jumbo">
                         <h2>Location information is unavailable.</h2>
                     </div>
                 </div>
@@ -77,7 +83,7 @@ class Main extends Component {
         } else if (this.state.timeout) {
             return (
                 <div className="container-fluid error-page">
-                    <div className="jumbotron">
+                    <div className="jumbotron error-jumbo">
                         <h2>The request to get user location timed out.</h2>
                     </div>
                 </div>
@@ -89,10 +95,20 @@ class Main extends Component {
             )
         }
     }
+errorFetch = ()=>{
+    return (
+        <div className="container-fluid error-page">
+            <div className="jumbotron error-jumbo">
+                <h2>{this.state.errorMsg}</h2>
+            </div>
+        </div>
+    )
+}
 
     render() {
         return (
-            this.state.loadingPage ? this.handleErrors() : <Loading />
+            this.state.errorMsg ? this.errorFetch() :
+            (this.state.loadingPage ? this.handleErrors() : <Loading />)
         )
     }
 

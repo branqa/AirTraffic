@@ -7,7 +7,7 @@ body {
 /* welcome page */
 
 .welcome {
-  background: url('./images/airplane.jpg');
+  background: url('./images/airplane.png');
   background-size: cover;
   color: #ffffff;
   height: 120vh;
@@ -27,7 +27,13 @@ body {
 
 .error-page {
   padding: 0;
-  margin-top: 100px;
+  margin-top: 120px;
+}
+.error-jumbo{
+  height:70vh;
+  padding-top:100px;
+  text-align: center;
+  background: linear-gradient(rgb(46, 41, 124), rgb(255, 255, 255))
 }
 
 .crash {
@@ -92,7 +98,7 @@ body {
 }
 
 .flights-back {
-  background: url('./images/flights-background.jpg');
+  background: url('./images/flights-background.png');
   background-size: cover;
   padding: 60px 0;
 }
