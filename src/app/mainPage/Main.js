@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Error from '../errorPage/Error';
 import Loading from './Loading';
 import { dataService } from '../../services/dataService';
+import FlightList from './FlightList'
 
 class Main extends Component {
 
@@ -78,19 +79,7 @@ class Main extends Component {
             )
         } else {
             return (
-                <div><h1>Test</h1>
-                    {this.state.flights.map((flight) => {
-
-                        return (
-                                <li key={flight.id} className="list-group-item list-group-item-action list-group-item-light">
-                                    <div className="row">
-                                        <div className="col-sm">{flight.flightNumber}</div>
-                                    </div>
-                                </li>
-
-                        )
-                    })}
-                </div>
+                <FlightList flights={this.state.flights} />
             )
         }
     }
