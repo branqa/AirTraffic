@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import Error from '../errorPage/Error';
 import Loading from './Loading';
+import { dataService } from '../../services/dataService';
 
 class Main extends Component {
-    
+
     constructor(props) {
         super(props)
         this.state = {
@@ -12,7 +13,8 @@ class Main extends Component {
             loadingPage: false,
             permDenied: false,
             posUnavailable: false,
-            timeout: false
+            timeout: false,
+            flights: []
         }
     }
 
@@ -26,6 +28,14 @@ class Main extends Component {
             longitude: position.coords.longitude,
             loadingPage: true
         })
+
+        dataService.getFlights(this.state.latitude, this.state.longitude)
+            .then(allFlights => {
+                this.setState({
+                    flights: allFlights
+                });
+            }
+            )
     }
 
     error = (error) => {
@@ -67,7 +77,21 @@ class Main extends Component {
                 </div>
             )
         } else {
-            return <div>This is just a test {this.state.longitude}, {this.state.latitude}</div>
+            return (
+                <div><h1>Test</h1>
+                    {this.state.flights.map((flight) => {
+
+                        return (
+                                <li key={flight.id} className="list-group-item list-group-item-action list-group-item-light">
+                                    <div className="row">
+                                        <div className="col-sm">{flight.flightNumber}</div>
+                                    </div>
+                                </li>
+
+                        )
+                    })}
+                </div>
+            )
         }
     }
 
