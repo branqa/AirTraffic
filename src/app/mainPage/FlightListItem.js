@@ -4,7 +4,6 @@ import airplanelogo from '../../images/airplane-logo.png';
 
 const FlightListItem = (props) => {
     return (
-
         <Link to={`/flightinfo/${props.oneFlight.id}`} className="link-decoration">
             <li className="list-group-item list-group-item-action list-group-item-light">
                 <div className="row">

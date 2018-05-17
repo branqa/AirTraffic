@@ -20,26 +20,23 @@ const FlightInfo = (props) => {
                         </div>
                         <div className="col-lg-7">
                             <div className="card-block">
-
                                 <div className="card-text"><h6> Model:</h6>
                                     <h5>{oneFlight.model}</h5><hr />
                                     <div><h6>Route: </h6><h5>{oneFlight.originAirport}-{oneFlight.destination}</h5></div>
-                                    </div>
+                                </div>
                                 <hr />
                                 <h6> Company Logo:</h6>
-                                <img src={imageSrc} alt="company-logo" className="company-logo"/>
-                               <hr />
-                               <div className="right-align">
-                                <Link to="/main"><div className="btn btn-primary">Back</div></Link>
+                                <img src={imageSrc} alt="company-logo" className="company-logo" />
+                                <hr />
+                                <div className="right-align">
+                                    <Link to="/main/prevlist"><div className="btn btn-primary btn-lg">Back to current list</div></Link>
+                                    <Link to="/main"><div className="btn btn-primary btn-lg">New list</div></Link>
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
-
         </div>
 
     )

@@ -2,8 +2,8 @@ import React from 'react';
 import FlightListItem from './FlightListItem';
 import compass from '../../images/compass.png';
 
-const FlightList = (props) => {
- 
+const SameFlightList = () => {
+    const flights = JSON.parse(localStorage.getItem('Allflights'));
     return (
         <div className="container-fluid" className="flights-back">
             <div className="container main-list">
@@ -15,9 +15,10 @@ const FlightList = (props) => {
                             <div className="col-5 col-sm-5 list-info">Flight Code Number</div>
                         </div>
                     </li>
-                    {props.flights.map((flight) => {
+                    {flights.map((flight) => {
                         return (
                             <FlightListItem oneFlight={flight} key={flight.id} />
+
                         )
                     })}
                 </ul>
@@ -26,4 +27,4 @@ const FlightList = (props) => {
     )
 }
 
-export default FlightList;
+export default SameFlightList;

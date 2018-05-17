@@ -38,7 +38,7 @@ class Main extends Component {
                         errorMsg: allFlights.error
                     })
                 } else {
-                    localStorage.setItem('Allflights', JSON.stringify(allFlights))
+                    
                     this.setState({
                         flights: allFlights
                     })
@@ -89,7 +89,9 @@ class Main extends Component {
                 </div>
             )
         } else {
+           
             const sortedFlights = (this.state.flights).sort((a, b) => b.altitude - a.altitude)
+            localStorage.setItem('Allflights', JSON.stringify(sortedFlights))
             return (
                 <FlightList flights={sortedFlights} />
             )
