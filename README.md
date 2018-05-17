@@ -10,3 +10,8 @@ Languages: `HTML5, CSS3, JavaScript (ES6)`
 Framework: `React, Bootstrap`
 
 Package Manager: `Yarn`
+
+#### Note
+
+To avoid CORS security policy you must install browser allow cors plugin
+
