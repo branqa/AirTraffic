@@ -70,10 +70,11 @@ body {
 }
 
 .east {
-  width: 70%;
+  width: 60%;
   min-width: 65px;
   animation: roll 4s;
   transform: rotate(45deg);
+  margin-left: -8px;
 }
 
 @keyframes rollreverse {
@@ -86,14 +87,14 @@ body {
 }
 
 .west {
-  width: 70%;
+  width: 60%;
   min-width: 65px;
   animation: rollreverse 4s;
   transform: rotate(225deg);
 }
 
 .compas-logo {
-  width: 90px;
+  width: 80px;
   position: relative;
   left: -5px;
 }
@@ -140,20 +141,24 @@ body {
 
 /* for small devices */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 767px) {
   .main-heading {
     font-size: 32px;
   }
+  .list-info {
+    padding-top: 20px;
+  }
   .east {
-    width: 140%;
-    min-width: 25px;
+    width: 130%;
+    min-width: 30px;
   }
   .west {
-    width: 140%;
-    min-width: 25px;
+    width: 130%;
+    min-width: 30px;
   }
   .compas-logo {
-    width: 50px;
+    width: 60px;
+    margin-left:-13px;
   }
   .list-info {
     font-size: 12px;

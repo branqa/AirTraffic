@@ -94,6 +94,7 @@ class Main extends Component {
             localStorage.setItem('Allflights', JSON.stringify(sortedFlights))
             return (
                 <FlightList flights={sortedFlights} />
+                
             )
         }
     }
