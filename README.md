@@ -1,6 +1,6 @@
 # Air-Traffic
 
-React app that show all the airplanes that are flying over your current location
+React app for showing all the airplanes that are flying over your current location
 
 Demo: [Air-traffic](http://branqa.github.io/AirTraffic/)
 
